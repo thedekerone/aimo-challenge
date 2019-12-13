@@ -1,0 +1,11 @@
+version: '3'
+services:
+  aimo:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./pages:/usr/pages
+      - ./components:/usr/components
+      - ./static:/usr/static
+    image: aimo
