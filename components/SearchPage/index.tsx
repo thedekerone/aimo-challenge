@@ -4,15 +4,15 @@ import { DataContext } from '../DataContext';
 import { delay } from '../../utils/throttle';
 
 export const SearchPage = () => {
-	const { update } = useContext(DataContext);
+	const { update, setLoading } = useContext(DataContext);
 
 	const handleSearch = async (value: string) => {
 		let uri: string = '';
 		uri = `https://api.github.com/search/users?q=${value}`;
-
+		setLoading({ loading: true });
 		await delay(1000);
 
-		if (value.length > 3) {
+		if (value.length > 1) {
 			await update(uri);
 			console.log(uri);
 		}

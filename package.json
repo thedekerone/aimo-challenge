@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "next",
-		"build": "next build && tsc --project tsconfig.server.json",
+		"build": "next build ",
 		"start": "cross-env NODE_ENV=production node dist/index.js"
 	},
 	"author": "zhangist",

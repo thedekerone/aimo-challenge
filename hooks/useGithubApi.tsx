@@ -18,12 +18,19 @@ export const useGithubApi = (uri: string) => {
 		}
 	};
 
+	const setLoading = () => {
+		if (data.loading === false) {
+			setData({ loading: true });
+		}
+	};
+
 	useEffect(() => {
 		fetchData(uri);
 	}, []);
 
 	return {
 		data,
-		fetchData
+		fetchData,
+		setLoading
 	};
 };

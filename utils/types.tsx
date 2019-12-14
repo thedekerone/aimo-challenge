@@ -13,5 +13,5 @@ export interface Idata {
 export interface Icontext {
 	data: Idata;
 	update?: any;
-	setData?: any;
+	setLoading?: any;
 }
