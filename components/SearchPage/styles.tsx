@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Background = styled.div`
 	width: 100%;
 	height: 37rem;
-	background: url('/static/background.jpg');
+	background: url(${require('../../static/background.jpg?webp')});
 	padding-top: 13rem;
 	background-repeat: no-repeat;
 	background-size: cover;
