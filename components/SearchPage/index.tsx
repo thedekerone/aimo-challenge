@@ -1,6 +1,13 @@
-import React from 'react'
-import { Background } from './styles'
+import React from 'react';
+import { Background, Search, Title, Container } from './styles';
 
-export function SearchPage() {
-  return <Background>aea</Background>
-}
+export const SearchPage = () => {
+	return (
+		<Background>
+			<Container>
+				<Title>Github Profile</Title>
+				<Search />
+			</Container>
+		</Background>
+	);
+};

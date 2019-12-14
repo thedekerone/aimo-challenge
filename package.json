@@ -1,32 +1,38 @@
 {
-  "name": "aimo-challenge",
-  "version": "2.0.0",
-  "description": "Nextjs github api",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next",
-    "build": "next build && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node dist/index.js"
-  },
-  "author": "zhangist",
-  "license": "ISC",
-  "repository": "https://github.com/zhangist/nextjs-typescript-boilerplate",
-  "dependencies": {
-    "next": "8.1.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "styled-components": "4.4.1"
-  },
-  "devDependencies": {
-    "@types/next": "8.0.5",
-    "@types/react": "16.8.20",
-    "@types/react-dom": "16.8.4",
-    "@types/styled-components": "4.4.1",
-    "@types/styled-jsx": "2.2.8",
-    "@zeit/next-typescript": "1.1.1",
-    "cross-env": "5.2.0",
-    "nodemon": "1.19.1",
-    "ts-node": "8.3.0",
-    "typescript": "3.5.2"
-  }
+	"name": "aimo-challenge",
+	"version": "2.0.0",
+	"description": "Nextjs github api",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next",
+		"build": "next build && tsc --project tsconfig.server.json",
+		"start": "cross-env NODE_ENV=production node dist/index.js"
+	},
+	"author": "zhangist",
+	"license": "ISC",
+	"repository": "https://github.com/zhangist/nextjs-typescript-boilerplate",
+	"dependencies": {
+		"isomorphic-fetch": "2.2.1",
+		"lqip-loader": "^2.2.0",
+		"next": "9.1.4",
+		"next-compose-plugins": "2.2.0",
+		"next-optimized-images": "2.5.4",
+		"next-routes": "1.4.2",
+		"react": "16.8.6",
+		"react-dom": "16.8.6",
+		"styled-components": "4.4.1",
+		"webp-loader": "^0.5.0"
+	},
+	"devDependencies": {
+		"babel-plugin-styled-components": "^1.10.6",
+		"@types/next": "8.0.5",
+		"@types/react": "16.8.20",
+		"@types/react-dom": "16.8.4",
+		"@types/styled-components": "4.4.1",
+		"@types/styled-jsx": "2.2.8",
+		"cross-env": "5.2.0",
+		"nodemon": "1.19.1",
+		"ts-node": "8.3.0",
+		"typescript": "3.5.2"
+	}
 }

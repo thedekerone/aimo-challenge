@@ -8,4 +8,5 @@ services:
       - ./pages:/usr/pages
       - ./components:/usr/components
       - ./static:/usr/static
+      - ./hooks:/usr/hooks
     image: aimo

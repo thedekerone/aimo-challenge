@@ -1,5 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Title, Container } from './styles';
 
-export function Navbar() {
-  return <div>THIS IS dd NAdVBAR</div>
-}
+export const Navbar = () => {
+	return (
+		<Container>
+			<Title>Aimo</Title>
+		</Container>
+	);
+};
