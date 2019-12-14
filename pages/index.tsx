@@ -7,12 +7,10 @@ import { DataContext } from '../components/DataContext';
 import { UsersInSearch } from '../components/UsersInSearch';
 
 export default () => {
-	const [
-		data
-	] = useGithubApi('https://api.github.com/search/users?q=t&&X-RateLimit-Limit=5');
+	const { data, fetchData } = useGithubApi('https://api.github.com/search/users?q=t&&X-RateLimit-Limit=5');
 
 	return (
-		<DataContext.Provider value={data}>
+		<DataContext.Provider value={{ data: data || { loading: true }, update: fetchData }}>
 			<GlobalStyles />
 			<Navbar />
 			<SearchPage />

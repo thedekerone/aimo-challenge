@@ -9,4 +9,5 @@ services:
       - ./components:/usr/components
       - ./static:/usr/static
       - ./hooks:/usr/hooks
+      - ./utils:/usr/utils
     image: aimo
