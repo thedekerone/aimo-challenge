@@ -15,3 +15,10 @@ export interface Icontext {
 	update?: any;
 	setLoading?: any;
 }
+
+export type query = {
+	username: string;
+};
+export interface IuserProps {
+	data: Iitems;
+}

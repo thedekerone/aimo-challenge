@@ -1,6 +1,8 @@
 import React from 'react';
 import { Img, Container, UserName } from './styles';
 import { Iitems } from '../../utils/types';
+//@ts-ignore
+import { Link } from '../../routes';
 
 export const UserCard = ({
 	login = 'username',
@@ -9,11 +11,13 @@ export const UserCard = ({
 	id = 20
 }: Iitems) => {
 	return (
-		<Container>
-			<Img src={avatar_url} alt='user image' />
-			<UserName>{login}</UserName>
-			<span>score: {score}</span>
-			<span>{id}</span>
-		</Container>
+		<Link route='user' params={{ username: login }}>
+			<Container>
+				<Img src={avatar_url} alt='user image' />
+				<UserName>{login}</UserName>
+				<span>score: {score}</span>
+				<span>{id}</span>
+			</Container>
+		</Link>
 	);
 };

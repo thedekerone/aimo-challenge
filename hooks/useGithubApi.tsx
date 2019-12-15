@@ -2,35 +2,46 @@ import { useState, useEffect } from 'react';
 import 'isomorphic-fetch';
 import { Idata } from '../utils/types';
 
-export const useGithubApi = (uri: string) => {
+export const fetcher = async (uri: string) => {
+	try {
+		const response = await fetch(uri);
+		const json = await response.json();
+		return json;
+	} catch (error) {
+		console.log(error);
+	}
+};
+export const useGithubApi = (uri?: string) => {
 	const [
 		data,
 		setData
-	] = useState<Idata>({ loading: true });
+	] = useState<Idata>({ loading: false });
 
 	const fetchData = async (uri: string) => {
-		try {
-			const response = await fetch(uri);
-			const json = await response.json();
-			setData({ ...json, loading: false });
-		} catch (error) {
-			console.log(error);
-		}
+		const json = await fetcher(uri);
+		setData({ ...json, loading: false });
 	};
 
-	const setLoading = () => {
-		if (data.loading === false) {
-			setData({ loading: true });
+	const setLoading = (bool: boolean) => {
+		if (data.loading !== bool) {
+			setData({ loading: bool });
 		}
 	};
-
-	useEffect(() => {
-		fetchData(uri);
-	}, []);
+	if (uri !== undefined) {
+		useEffect(() => {
+			fetchData(uri);
+		}, []);
+	}
 
 	return {
 		data,
 		fetchData,
 		setLoading
 	};
+};
+
+export const getSingleUser = async (username: string) => {
+	const uri = `https://api.github.com/users/${username}`;
+	const json = await fetcher(uri);
+	return json;
 };

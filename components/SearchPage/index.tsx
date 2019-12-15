@@ -9,12 +9,15 @@ export const SearchPage = () => {
 	const handleSearch = async (value: string) => {
 		let uri: string = '';
 		uri = `https://api.github.com/search/users?q=${value}`;
-		setLoading({ loading: true });
-		await delay(1000);
+		setLoading(true);
 
-		if (value.length > 1) {
+		if (value.length > 0) {
+			await delay(1000);
 			await update(uri);
 			console.log(uri);
+		}
+		if (value.length === 0) {
+			setLoading(false);
 		}
 	};
 	return (

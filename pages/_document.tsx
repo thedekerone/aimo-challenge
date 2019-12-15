@@ -9,10 +9,11 @@ export default class MyDocument extends Document {
 	//@ts-ignore
 	static getInitialProps({ renderPage }) {
 		// Step 1: Create an instance of ServerStyleSheet
-		const sheet: any = new ServerStyleSheet();
+		const sheet = new ServerStyleSheet();
 
 		// Step 2: Retrieve styles from components in the page
 		//@ts-ignore
+
 		const page = renderPage((App) => (props) => sheet.collectStyles(<App {...props} />));
 
 		// Step 3: Extract the styles as <style> tags

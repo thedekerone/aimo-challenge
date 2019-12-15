@@ -7,7 +7,7 @@ import { DataContext } from '../components/DataContext';
 import { UsersInSearch } from '../components/UsersInSearch';
 
 export default () => {
-	const { data, fetchData, setLoading } = useGithubApi('https://api.github.com/search/users?q=');
+	const { data, fetchData, setLoading } = useGithubApi();
 
 	return (
 		<DataContext.Provider value={{ data: data || { loading: true }, update: fetchData, setLoading: setLoading }}>
