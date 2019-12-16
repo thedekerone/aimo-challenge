@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Img = styled.img`
 	width: 100%;
-	max-width: 20rem;
+	max-width: 10rem;
 	border-radius: 10px;
 `;
 export const Username = styled.span`
@@ -23,7 +23,7 @@ export const Container = styled.div`
 	padding-top: 9rem;
 	display: flex;
 	flex-direction: column;
-	@media (min-width: 1100px) {
+	@media (min-width: 900px) {
 		flex-direction: row;
 	}
 `;
@@ -31,21 +31,22 @@ export const Container = styled.div`
 export const ProfileInfo = styled.div`
 	margin-left: 2rem;
 	width: 100%;
-	@media (min-width: 1100px) {
+
+	@media (min-width: 900px) {
 		margin-left: 0;
 		margin-top: .6rem;
-		& img {
-			max-width: 100%;
-		}
 	}
 `;
 
 export const Profile = styled.div`
 	width: 100%;
 	display: flex;
-	@media (min-width: 1100px) {
+	@media (min-width: 900px) {
 		max-width: 22rem;
 		flex-direction: column;
+		& img {
+			max-width: 100%;
+		}
 	}
 `;
 
@@ -54,7 +55,7 @@ export const RepositoryList = styled.div`
 	width: 100%;
 	margin-left: 0;
 	margin-top: 6rem;
-	@media (min-width: 1100px) {
+	@media (min-width: 900px) {
 		flex-direction: row;
 		margin-left: 6rem;
 		margin-top: 0;
