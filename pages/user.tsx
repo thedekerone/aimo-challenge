@@ -1,20 +1,40 @@
-import React from 'react';
-import { IuserProps, query } from '../utils/types';
+import React, { useEffect, useState } from 'react';
+import { IuserProps, Iquery } from '../utils/types';
 import { GlobalStyles } from '../utils/GlobalStyles';
-import { getSingleUser } from '../hooks/useGithubApi';
+import { dataFetcher, getRepos } from '../hooks/useGithubApi';
+import { UserPage } from '../components/UserPage';
+import { Navbar } from '../components/Navbar';
 
 const User = ({ data }: IuserProps) => {
+	const [
+		reposData,
+		setReposData
+	] = useState([]);
+
+	useEffect(() => {
+		getRepos(data.repos_url, setReposData);
+	}, []);
 	console.log(data);
+
+	const { login, score, avatar_url, name, html_url } = data;
 	return (
 		<div>
 			<GlobalStyles />
-			<h1>{data.login}</h1>
+			<Navbar dark />
+			<UserPage
+				login={login}
+				score={score}
+				avatar_url={avatar_url}
+				name={name}
+				html_url={html_url}
+				repositories={reposData}
+			/>
 		</div>
 	);
 };
-//@ts-ignore
-User.getInitialProps = async ({ query }: query) => {
-	const data = await getSingleUser(query.username);
-	return { data: data };
+
+User.getInitialProps = async ({ query }: Iquery) => {
+	const userData = await dataFetcher(query.username);
+	return { data: userData };
 };
 export default User;

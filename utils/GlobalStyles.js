@@ -7,9 +7,11 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
         padding: 0;
+        color:#2e2e2e;
     }
     a{
-        text-decoration:none
+        text-decoration:none;
+        cursor: pointer;
     }
     body{
         font-family: 'Montserrat', sans-serif;

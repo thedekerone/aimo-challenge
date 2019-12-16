@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`width: 100%;`;
+export const Container = styled.a`
+	width: 100%;
+	display: block;
+`;
 
 export const Img = styled.img`
 	width: 100%;

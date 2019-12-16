@@ -1,10 +1,14 @@
 import React from 'react';
 import { Title, Container } from './styles';
+import { Inavbar } from '../../utils/types';
+import Link from 'next/link';
 
-export const Navbar = () => {
+export const Navbar = ({ dark }: Inavbar) => {
 	return (
-		<Container>
-			<Title>Aimo</Title>
+		<Container dark={dark}>
+			<Link href='/'>
+				<Title>Aimo</Title>
+			</Link>
 		</Container>
 	);
 };

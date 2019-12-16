@@ -5,6 +5,7 @@ import { Idata } from '../utils/types';
 export const fetcher = async (uri: string) => {
 	try {
 		const response = await fetch(uri);
+		console.log(uri);
 		const json = await response.json();
 		return json;
 	} catch (error) {
@@ -40,8 +41,14 @@ export const useGithubApi = (uri?: string) => {
 	};
 };
 
-export const getSingleUser = async (username: string) => {
+export const dataFetcher = async (username: string) => {
 	const uri = `https://api.github.com/users/${username}`;
 	const json = await fetcher(uri);
 	return json;
+};
+
+// Setter represents the set method on a useState hook
+export const getRepos = async (uri: string, setter: any) => {
+	const json = await fetcher(uri);
+	setter(json);
 };

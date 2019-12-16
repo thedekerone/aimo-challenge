@@ -8,7 +8,7 @@ export const SearchPage = () => {
 
 	const handleSearch = async (value: string) => {
 		let uri: string = '';
-		uri = `https://api.github.com/search/users?q=${value}`;
+		uri = `https://api.github.com/search/users?q=${value}&client_id=Iv1.fab9fbadcbe99d15&client_secret=4db17e6352ba149aa850f1a28220ae86fa5aeb79`;
 		setLoading(true);
 
 		if (value.length > 0) {

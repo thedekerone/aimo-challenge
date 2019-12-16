@@ -1,8 +1,7 @@
 import React from 'react';
 import { Img, Container, UserName } from './styles';
 import { Iitems } from '../../utils/types';
-//@ts-ignore
-import { Link } from '../../routes';
+import Link from 'next/link';
 
 export const UserCard = ({
 	login = 'username',
@@ -11,7 +10,7 @@ export const UserCard = ({
 	id = 20
 }: Iitems) => {
 	return (
-		<Link route='user' params={{ username: login }}>
+		<Link href={{ pathname: '/user', query: { username: login } }}>
 			<Container>
 				<Img src={avatar_url} alt='user image' />
 				<UserName>{login}</UserName>

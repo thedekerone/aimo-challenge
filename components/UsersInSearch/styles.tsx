@@ -14,7 +14,7 @@ export const Title = styled.h3`
 export const Container = styled.div`
 	max-width: 90rem;
 	margin: 0 auto;
-	min-height: 15rem;
+	min-height: 30rem;
 	margin-top: 4rem;
 	padding: 0 2rem;
 `;
