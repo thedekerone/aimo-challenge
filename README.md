@@ -1,4 +1,4 @@
-# nextjs-typescript-boilerplate
+# aimo-challenge
 
 A boilerplate using Next.js and Typescript.
 
