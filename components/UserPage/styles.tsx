@@ -2,8 +2,13 @@ import styled from 'styled-components';
 
 export const Img = styled.img`
 	width: 100%;
+	height: 100%;
+
 	max-width: 10rem;
 	border-radius: 10px;
+	@media (min-width: 900px) {
+		height: auto;
+	}
 `;
 export const Username = styled.span`
 	font-size: 1.6rem;
