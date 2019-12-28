@@ -1,6 +1,6 @@
-# aimo-challenge
+# Github users
 
-A boilerplate using Next.js and Typescript.
+Next.js and Typescript.
 
 ## Start
 
